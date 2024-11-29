@@ -73,7 +73,7 @@ For each missing entry:
 
 If both previous and next valid values are found, it calculates the interpolated value using the formula:
 
-
+![Alt Text](Pictures/Screenshot_2024-11-29_125858.png)
 
 This formula ensures the new value is proportionally spaced between the previous and next values.
 
