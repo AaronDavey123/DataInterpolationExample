@@ -1,16 +1,16 @@
 # Mercury Level Interpolation for Missing Data
 
-## Overview
+## 📄Overview
 
 This Python script processes time-series data that includes mercury levels measured at various times. Some of the readings may be missing, denoted by labels like `Missing_1`, `Missing_2`, etc. The goal of this script is to detect these missing values and fill them in using linear interpolation based on the known values surrounding the missing data points. The final output prints the interpolated mercury levels for the missing entries, ordered by the labels such as "Missing_1", "Missing_2", etc.
 
-## Features
+## 📊Features
 
 - **Detects Missing Values:** It identifies missing readings from the input data marked with labels like `Missing_1`, `Missing_2`, etc.
 - **Linear Interpolation:** For each missing value, the script uses linear interpolation to estimate the value based on the previous and next valid readings.
 - **Output in Order:** The missing values are output in a specific order, from "Missing_1" to "Missing_20", depending on the data.
 
-## Code Explanation
+## 📂Code Explanation
 
 ### 1. Importing Required Libraries
 The script uses the following libraries:
@@ -58,7 +58,7 @@ def calcMissing(readings):
         else:
             mercury_levels.append(float(value))  # Store valid mercury level as float
 ```
-#### What Happens Here:
+#### 🔍What Happens Here:
 - Iterating through the readings: The function loops through each reading and splits the data into timestamp and value. If the value contains a missing label (like Missing_1), it appends None to the mercury_levels list and records the index in missing_indices.
 - Handling valid readings: If the value is valid, it converts it to a float and appends it to the mercury_levels list.
 
@@ -175,7 +175,7 @@ Where:
 
 3. **Apply the formula**: Once we have the slope, we calculate how far the missing x-value \(x\) is from \(x_1\) and use this to scale the difference in y-values. The result is the interpolated y-value at \(x\).
 
-### Conclusion
+### 🚀Conclusion
 
 Linear interpolation is an essential technique in data processing, particularly in scenarios where you need to fill in missing values in a time-series dataset. By assuming that the change between known data points is linear, it allows you to estimate intermediate values in a simple yet effective way. In this script, linear interpolation is used to fill in missing mercury levels by estimating values based on the available surrounding data. This ensures that the dataset remains continuous and ready for further analysis.
 
